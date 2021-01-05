@@ -1,5 +1,5 @@
 <?php
-
+ $xcrud->unset_remove();
 $xcrud->table('tbl_order_header');
 $xcrud->table_name('รายการขาย ');
 

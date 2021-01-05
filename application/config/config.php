@@ -1,8 +1,8 @@
 ﻿<?php
  
  
-$config['base_url'] = 'http://localhost/Foods/foodshop3/';
-$config['base_path'] = 'http://localhost/Foods/foodshop3/';
+$config['base_url'] = 'http://localhost/Foods/PN_SHOP/FoodShop/';
+$config['base_path'] = 'http://localhost/Foods/PN_SHOP/FoodShop/';
 $config['default_controller'] = 'main';
 $config['error_controller'] = 'notfound';
 
@@ -14,16 +14,16 @@ $config['show_error'] = false;
 $config['show_error_level'] = '1';
 // 1 normal // 2 advance
 
-$config['db_host'] = 'kis-db-02.kraois.com';
-$config['db_name'] = 'db_canteen';
-$config['db_username'] = 'phpmyadmin';
-$config['db_password'] = 'Kraosoft@min@1';
+$config['db_host'] = 'localhost';
+$config['db_name'] = 'nana_mart';
+$config['db_username'] = 'root';
+$config['db_password'] = '123';
 $config['db_prefix'] = '';
 // DB1
-$config['db_host1'] = 'kis-db-02.kraois.com';
-$config['db_name1'] = 'db_canteen';
-$config['db_username1'] = 'phpmyadmin';
-$config['db_password1'] = 'Kraosoft@min@1';
+$config['db_host1'] = 'localhost';
+$config['db_name1'] = 'nana_mart';
+$config['db_username1'] = 'root';
+$config['db_password1'] = '123';
 
 define("DB_HOST", $config['db_host']);
 define("DB_NAME", $config['db_name']);

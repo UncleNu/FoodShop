@@ -4,21 +4,21 @@
 
         function Login () {
             $email = $_POST["email"];
-            $pwd = md5($_POST["password_hash"]);
-
+            // $pwd = md5($_POST["password_hash"]);
+            $pwd =  ($_POST["password_hash"]);
             $sql = " SELECT * FROM cnf_user WHERE user_login = '$email' AND user_password = '$pwd'   ";
-            $sql .= "";
+            $sql .= " AND user_level != 4 ";
                 echo "<pre> $sql </pre> ";
                 $res = $this->query($sql);
-                // echo "<pre>  $res </pre> ";
-                // print_r ($res);
+                echo "<pre>  $res </pre> ";
+             //print_r ($res);
 
                 $i=0;
                 foreach ($res as $key_res => $value_res) {
 
                         $_SESSION['user_id'] = $value_res->user_id;
                         $_SESSION['user_level'] = $value_res->user_level;
-                        $_SESSION['user_name'] = $value_res->username;
+                        $_SESSION['user_name'] = $value_res->user_name;
                         // $_SESSION['user_img'] = $value_res->user_img;
                         $i++;
                     }

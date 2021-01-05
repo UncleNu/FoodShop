@@ -2,7 +2,7 @@
 $xcrud->table('tbl_shops');
 $xcrud->table_name('ข้อมูลร้านค้า ');
 $xcrud->unset_view();
- 
+$xcrud->unset_remove();
 
 if ($_SESSION['user_level'] > -1) {
     $xcrud->unset_remove();
@@ -10,8 +10,8 @@ if ($_SESSION['user_level'] > -1) {
 
 
 // $xcrud->where("category_id = 1 ");
-$xcrud->columns('shop_id,shop_code, shop_name , shop_type_id ,shop_login, IsActive ');
-$xcrud->fields('shop_code, shop_name, shop_type_id, shop_login, shop_password, IsActive ');
+$xcrud->columns('shop_id,shop_code, shop_name , shop_type_id ,  IsActive ');
+$xcrud->fields('shop_code, shop_name, shop_type_id, IsActive,IsDelete ');
 
 // $xcrud->change_type('shop_password', 'password', 'md5', array('maxlength'=>10,'placeholder'=>'enter password'));
 $xcrud->relation('shop_type_id','cnf_shop_type','shop_type_id','shop_type_name');
@@ -50,8 +50,8 @@ $xcrud->pass_var('update_date',    date('Y-m-d H:i:s') , 'edit');
 $menus = $xcrud->nested_table('menus','shop_id','tbl_menus','shop_id'); // nested table
 $menus->table_name('เมนูประจำร้าน ');
 
-$menus->columns('menu_img, menu_id, menu_name, menu_price , IsActive  ');
-$menus->fields('menu_img,  menu_name, menu_price , IsActive  ');
+$menus->columns('menu_id, menu_code, menu_name, menu_price , IsActive  ');
+$menus->fields('menu_code,  menu_name, menu_price , IsActive  ');
  
 
 
@@ -60,7 +60,8 @@ $menus->change_type('menu_img', 'image');
 $menus->change_type('menu_img', 'image', '', array('width' => 800, 'height' => 600));
  
 
-$menus->label('menu_img', 'Image');
+$menus->label('menu_id', 'ID');
+$menus->label('menu_code', 'รหัสอาหาร');
 $menus->label('menu_name', 'รายการอาหาร');
 $menus->label('menu_price', 'ราคา');
 

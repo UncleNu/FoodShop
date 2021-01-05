@@ -1,7 +1,9 @@
 <?php //include("header.php");?>
 <?php $this->loadLayout("role/layout/header"); ?>
+
 <?php  //echo BASE_URL;?>
- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>  
+ <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>   -->
+ <script src="<?php echo BASE_URL; ?>static/js/jquery-1.11.1.min.js"></script>  
 <!-- jQuery -->
  
             <?php 

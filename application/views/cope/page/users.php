@@ -2,11 +2,14 @@
 $xcrud->table('cnf_user');
 $xcrud->table_name('User ');
 $xcrud->unset_view();
+$xcrud->unset_remove();
 // $xcrud->where("category_id = 1 ");
 $xcrud->columns('user_id, user_name, user_login , user_level , IsActive ,user_img');
-$xcrud->fields(' user_id, user_name, user_login, user_level ,user_password , IsActive ,user_img');
+$xcrud->fields(' user_id, user_name, user_login, user_level ,user_password , card_no , IsActive ,user_img');
 
-$xcrud->change_type('user_password', 'password', 'md5', array('maxlength'=>10,'placeholder'=>'enter password'));
+// $xcrud->change_type('user_password', 'password', 'md5', array('maxlength'=>10,'placeholder'=>'enter password'));
+$xcrud->change_type('user_password', 'password', '', 32);
+
 $xcrud->relation('user_level','userlevels','userlevelid','userlevelname');
 
 $xcrud->label('user_id', 'ID');

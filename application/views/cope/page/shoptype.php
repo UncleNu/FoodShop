@@ -1,11 +1,11 @@
 <?php
-
+ $xcrud->unset_remove();
 $xcrud->table('cnf_shop_type');
 $xcrud->table_name('ประเภทร้านค้า ');
 // $xcrud->where('catid =', 5);
 // $xcrud->where('created >', $last_visit);
 $xcrud->columns('shop_type_name, IsActive ');
-$xcrud->fields('shop_type_name, IsActive ');
+$xcrud->fields('shop_type_name, IsActive,IsDelete ');
 
 
 $xcrud->label('shop_type_name', 'ชื่อ');

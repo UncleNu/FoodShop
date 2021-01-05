@@ -11,15 +11,16 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-<div class="login-box">
+<div class="login-box" style="margin: auto;">
   <div class="login-logo">
+  <img src="<?php echo BASE_URL; ?>static/images/pch.png" width="250">
     <!-- <a href="../../index2.html"><b>Admin</b>LTE</a> -->
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+  <div  style="margin:auto;">
+    <p class="login-box-msg">Sign in to start application</p>
     <?php echo @$_SESSION['user_id']; ?>
-    <?php //echo BASE_URL; ?>
+    
     <form action="<?php echo BASE_URL; ?>login/act" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="User name" name="email" id = "email">
@@ -38,8 +39,8 @@
           </div>
         </div>
         <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary btn-block btn-flat" style="width: 100%;">Sign In</button>
         </div>
         <!-- /.col -->
       </div>

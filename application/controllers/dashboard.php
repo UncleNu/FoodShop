@@ -6,32 +6,30 @@ class dashboard extends Controller
     {
         $date1 = date("Y-m-d");
         $date2 = date("Y-m-d");
+        $mm = date("m");
+        $dashboard = $this->loadModel('dashboard_model');
+        $saleTopDay = $dashboard->SaleTopDay($date1);
+        $saleTopMonth = $dashboard->SaleTopMonth($mm);
 
-        // $QtData = $this->loadModel('qt_model');
-        // $QtValue = $QtData->QtSumData($date1, $date2);
-        // $QtCmtType1 = $QtData->QtSumCustomerType($date1, $date2, 1);
-        // $QtCmtType2 = $QtData->QtSumCustomerType($date1, $date2, 2);
-        // $QtPrice = $QtData->QtPrice($date1, $date2);
-        // $QtCar = $QtData->QtCountCar($date1, $date2);
+        $saleToDay = $dashboard->SaleToday($date1);
+        $saleToMonth = $dashboard->SaleMonth($mm);
+ 
+        $countMember = $dashboard->CountMember();
 
-
-        // $RcData = $this->loadModel('receive_model');
-        // $RcSumQTY = $RcData->RcSumQTY($date1, $date2);
-        // $RcSumPrice = $RcData->RcSumPrice($date1, $date2);
-
-
-        // $template = $this->loadView('dashboard_view');
-        // $template->set('QtSum', $QtValue);
-        // $template->set('QtCmtType1', $QtCmtType1);
-        // $template->set('QtCmtType2', $QtCmtType2);
-        // $template->set('QtPrice', $QtPrice);
-        // $template->set('QtCar', $QtCar);
-
-        // $template->set('RcSumQTY', $RcSumQTY);
-        // $template->set('RcSumPrice', $RcSumPrice);
+        $memberTopToday = $dashboard->MemberTopToday($date1);
+        $memberTopMonth = $dashboard->MemberTopMonth($mm);
 
 
         $template = $this->loadView('dashboard_view');
+        $template->set('saleTopDay', $saleTopDay);
+        $template->set('saleTopMonth', $saleTopMonth);
+        $template->set('saleToDay', $saleToDay);
+        $template->set('saleToMonth', $saleToMonth);
+        $template->set('countMember', $countMember);
+        $template->set('memberTopToday', $memberTopToday);
+        $template->set('memberTopMonth', $memberTopMonth);
+
+
         $template->render();
     }
 }

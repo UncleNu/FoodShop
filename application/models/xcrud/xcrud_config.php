@@ -9,10 +9,10 @@ class Xcrud_config
 // $config['db_password'] = '123456';
 // $config['db_prefix'] = 'ng_';
 
-    public static $dbname =  'db_canteen'; // Your database name
-    public static $dbuser =   'phpmyadmin'; // Your database username
-    public static $dbpass =   'Kraosoft@min@1'; // // Your database password
-    public static $dbhost = 'kis-db-02.kraois.com'; // Your database host, 'localhost' is default.
+    public static $dbname =  'nana_mart'; // Your database name
+    public static $dbuser =   'root'; // Your database username
+    public static $dbpass =   '123'; // // Your database password
+    public static $dbhost = 'localhost'; // Your database host, 'localhost' is default.
 
 
     // theme and language
